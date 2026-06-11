@@ -133,6 +133,61 @@
             transform: translateX(-3px);
         }
 
+        /* สไตล์ปุ่มเพลง */
+        .music-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 3px dashed rgba(236, 72, 153, 0.3);
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .music-button {
+            display: inline-flex;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Anuphan', sans-serif;
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+            align-items: center;
+            gap: 8px;
+            margin: 15px auto 0;
+        }
+
+        .music-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+        }
+
+        .music-button:active {
+            transform: translateY(0);
+        }
+
+        .music-button.playing {
+            background: linear-gradient(135deg, #db2777 0%, #ec4899 100%);
+        }
+
+        .music-note {
+            font-size: 1.2rem;
+            animation: bounce 0.6s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
         @media (max-width: 600px) {
             .letter-container {
                 padding: 25px 20px;
@@ -165,6 +220,11 @@
             .back-button {
                 justify-content: center;
                 width: 100%;
+            }
+
+            .music-button {
+                font-size: 0.9rem;
+                padding: 10px 25px;
             }
         }
 
@@ -212,7 +272,43 @@
                 ↩ กลับหน้าแรก
             </a>
         </div>
+
+        <!-- เพลง -->
+        <div class="music-section">
+            <button class="music-button" id="musicBtn" onclick="toggleMusic()">
+                <span class="music-note">🎵</span>
+                <span id="musicText">เปิดเพลงหลังจากก่อนอ่านหรืออ่านเสร็จก็ได้</span>
+            </button>
+            <audio id="audioPlayer" style="display: none;">
+                <source src="michiteu.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </div>
+
+    <script>
+        function toggleMusic() {
+            const audio = document.getElementById('audioPlayer');
+            const btn = document.getElementById('musicBtn');
+            const text = document.getElementById('musicText');
+
+            if (audio.paused) {
+                audio.play();
+                btn.classList.add('playing');
+                text.textContent = 'หยุดเพลง';
+            } else {
+                audio.pause();
+                btn.classList.remove('playing');
+                text.textContent = 'เปิดเพลง';
+            }
+        }
+
+        // เมื่อเพลงจบ ให้เปลี่ยนสถานะปุ่ม
+        document.getElementById('audioPlayer').addEventListener('ended', function() {
+            document.getElementById('musicBtn').classList.remove('playing');
+            document.getElementById('musicText').textContent = 'เปิดเพลง';
+        });
+    </script>
 
 </body>
 </html>
