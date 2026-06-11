@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry My Boo :(</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        background:
+            radial-gradient(circle at top, #ffd6e0 0%, #fff5f7 40%, #ffffff 100%);
+        font-family: "Sarabun", sans-serif;
+        color: #444;
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+    body::before {
+        content: "♡ ♡ ♡ ♡ ♡";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 2rem;
+        color: rgba(255, 105, 135, .12);
+        letter-spacing: 5vw;
+        pointer-events: none;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 20px 120px;
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        color: #ff4f79;
+        margin: 30px 0;
+        font-weight: 800;
+        letter-spacing: -2px;
+    }
+
+    p {
+        width: min(90%, 700px);
+        margin: 18px auto;
+        font-size: clamp(1rem, 2vw, 1.3rem);
+        line-height: 1.9;
+    }
+
+    img {
+        width: min(90vw, 450px);
+        height: auto;
+        margin: 40px auto;
+        display: block;
+        transition: .4s ease;
+    }
+
+    img:hover {
+        transform: scale(1.05) rotate(-2deg);
+    }
+
+    a {
+        margin-top: 60px;
+        text-decoration: none;
+        color: white;
+        background: linear-gradient(
+            135deg,
+            #ff5e84,
+            #ff7aa2
+        );
+        padding: 18px 45px;
+        border-radius: 999px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: .3s;
+    }
+
+    a:hover {
+        transform: translateY(-4px) scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+        img {
+            width: 95%;
+            margin: 30px auto;
+        }
+
+        p {
+            line-height: 1.8;
+        }
+
+        a {
+            width: 90%;
+            max-width: 320px;
+            padding: 18px;
+        }
+    }
+</style>
+</head>
+<body>
+    <img src="/image/ตาปิ้งแมว.png" alt="image">
+    <h1>หวัดดีเธอ</h1>
+    <p>วันนี้เค้าเป็นเด็กไม่ดีเลยใช่มั้ย คับเค้าพอจะรู้ตัว</p>
+    <p>เค้าอยากจะบอกเธอเค้าขอโทษ</p>
+    <img src="/image/แมวขอโทษ.gif" alt="gif">
+    <p>เค้ามีอะไรจะบอกนะ เลื่อนๆ</p>
+
+    <p>คือเค้ารักเธอแค่นี้</p>
+    <img src="/image/รักแรก.jpg" alt="gif">
+    <p>อะล้อเล่น</p>
+    <img src="/image/แมวไหว้.png" alt="gif">
+    <p>ไม่ๆๆ จริงๆคือเท่านี้</p>
+    <img src="/image/รักสอง.jpg" alt="gif">
+    <p>จริงๆคือเท่านี้ต่างหาก แฮร่</p>
+    <img src="/image/รักสาม.jpg" alt="gif">
+    <p>จริงๆความรักมันก็เท่านี้แหละเนอะ ต่อไปที่กำลังจะถึงนี้ คือสิ่งที่เค้าอยากจะบอกเธอทั้งหมด</p>
+    <p>ไม่รู้ว่าตอนเธออ่านเธอจะร้องไห้ ดีใจ เสียใจ ตลก หรืออะไรก็ตาม</p>
+    <p>แต่เค้าพิมพ์มันออกมาด้วยใจจริงๆ อยากให้เธอรู้</p>
+    <img src="/image/แมวร้อง.png" alt="gif">
+    <a href="love.html">กดตรงนี้เลยคับ</a>
+</body>
+</html>
