@@ -250,9 +250,22 @@
         
         <div class="letter-header">
             <p>
-                <span>✉️</span> ถึงเธอที่รัก
+                ถึงเธอที่รัก
             </p>
+            
         </div>
+        <!-- เพลง -->
+        <div class="music-section">
+            <button class="music-button" id="musicBtn" onclick="toggleMusic()">
+                <span class="music-note">🎵</span>
+                <span id="musicText">เปิดเพลงหลังจากก่อนอ่านหรืออ่านเสร็จก็ได้</span>
+            </button>
+            <audio id="audioPlayer" style="display: none;">
+                <source src="michiteu.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        
 
         <div class="letter-content">
             <p>
@@ -273,17 +286,7 @@
             </a>
         </div>
 
-        <!-- เพลง -->
-        <div class="music-section">
-            <button class="music-button" id="musicBtn" onclick="toggleMusic()">
-                <span class="music-note">🎵</span>
-                <span id="musicText">เปิดเพลงหลังจากก่อนอ่านหรืออ่านเสร็จก็ได้</span>
-            </button>
-            <audio id="audioPlayer" style="display: none;">
-                <source src="michiteu.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
+        
     </div>
 
     <script>
