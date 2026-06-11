@@ -1,12 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>จดหมาย</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Anuphan', sans-serif;
+            background: linear-gradient(135deg, #fff5f5 0%, #fbcfe8 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .letter-container {
+            max-width: 650px;
+            width: 100%;
+            background: white;
+            border-radius: 25px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 50px rgba(236, 72, 153, 0.25);
+            border: 2px solid rgba(236, 72, 153, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .letter-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(244, 114, 182, 0.05) 100%);
+            border-radius: 0 0 0 100%;
+            pointer-events: none;
+        }
+
+        .letter-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            background: rgba(244, 114, 182, 0.08);
+            border-radius: 0 100% 0 0;
+            pointer-events: none;
+        }
+
+        .letter-header {
+            border-bottom: 3px dashed rgba(236, 72, 153, 0.3);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .letter-header p {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #ec4899;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .letter-header span {
+            font-size: 1.8rem;
+        }
+
+        .letter-content {
+            position: relative;
+            z-index: 1;
+            text-align: justify;
+            line-height: 2;
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .letter-content p {
+            margin-bottom: 20px;
+            text-indent: 2em;
+            font-weight: 400;
+        }
+
+        .letter-footer {
+            border-top: 3px dashed rgba(236, 72, 153, 0.3);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .letter-footer p {
+            color: #999;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .back-button {
+            color: #ec4899;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .back-button:hover {
+            color: #db2777;
+            transform: translateX(-3px);
+        }
+
+        @media (max-width: 600px) {
+            .letter-container {
+                padding: 25px 20px;
+                border-radius: 15px;
+            }
+
+            .letter-header p {
+                font-size: 1.2rem;
+            }
+
+            .letter-header span {
+                font-size: 1.5rem;
+            }
+
+            .letter-content {
+                font-size: 1rem;
+                line-height: 1.8;
+            }
+
+            .letter-content p {
+                text-indent: 1.5em;
+                margin-bottom: 15px;
+            }
+
+            .letter-footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .back-button {
+                justify-content: center;
+                width: 100%;
+            }
+        }
+
+        /* เพิ่ม animation ที่ละเอียด */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .letter-container {
+            animation: fadeIn 0.6s ease;
+        }
+    </style>
 </head>
 <body>
-    <p>ถึงเธอที่รัก</p>
-    <p>โอเคคือตอนนี้เค้ารู้แหละว่าที่เค้าทำมันทำให้เธอเสียใจมากๆเค้าขอโทษนะ ไม่ได้คุยกันทุกวัน และเรื่องที่คุยกันเป็นเรื่องคนคุยเขาบ้างเรื่องเกมบ้าง กวนตีนบ้าง แต่ไม่มีเชิงชู้สาว และไม่เคยคิดเกินนั้น คุยกันกูมึงขนาดนั้น ถ้าจะจีบจริงๆคงไม่ได้พูดอะไรแบบนั้น เอาล่ะที่อธิบายไปนี่ไม่รู้เธอจะเชื่อเค้ามั้ย ไม่รู้เธอจะหายโกรธเค้ามั้ย ไม่รู้ว่าเธอจะเอายังไงกับความสัมพันธ์เรา แต่เค้ารักเธอนะ บอกไปเธอก็ไม่เชื่อ เค้ารู้ แต่ก็ยังอยากที่จะบอกอยู่ดี เธออาจจะมองว่าเค้าไม่คิดอะไรเลย ดูเหมือนคนไม่อยากมีกันต่อแล้ว แต่เปล่าเลย ก่อนนอนเค้าคิดทุกคืนว่าจะทำยังไงให้เราอยู่ด้วยกันได้นานๆ เค้าสามารถใช้ชีวิตคนเดียวได้ แต่ถ้ามีเธออยู่ด้วยกันมันดีมากกว่าไง ทุกอย่างในชีวิตเค้ามันดูง่ายขึ้น ถึงจะไม่มากแต่อย่างน้อยมันก็ง่ายขึ้น ขอโทษอีกครั้งที่ทำให้ต้องเสียใจอยู่บ่อยๆ ตลอดระยะเวลาที่ผ่านมาก็เกือบจะสี่ปีแล้ว ไม่มีวันไหนที่เธอหลับสนิทเลยใช่ไหม เค้ามันแย่เค้ารู้ เค้าก็พยายามปรับปรุงตัวเองนะ เค้าพยายามไม่ใช่ไม่พยายามเลย ถึงมันจะดูน้อยไปหรือยังไม่พอสำหรับเธอ </p>
+    <div class="letter-container">
+        
+        <div class="letter-header">
+            <p>
+                <span>✉️</span> ถึงเธอที่รัก
+            </p>
+        </div>
+
+        <div class="letter-content">
+            <p>
+                โอเคคือตอนนี้เค้ารู้แหละว่าที่เค้าทำมันทำให้เธอเสียใจมากๆเค้าขอโทษนะ ไม่ได้คุยกันทุกวัน และเรื่องที่คุยกันเป็นเรื่องคนคุยเขาบ้างเรื่องเกมบ้าง กวนตีนบ้าง แต่ไม่มีการคิดเชิงชู้สาว และไม่เคยคิดเกินนั้น คุยกันกูมึงขนาดนั้น ถ้าจะจีบจริงๆคงไม่ได้พูดอะไรแบบนั้น 
+            </p>
+            <p>
+                เอาล่ะที่อธิบายไปนี่ไม่รู้เธอจะเชื่อเค้ามั้ย ไม่รู้เธอจะหายโกรธเค้ามั้ย ไม่รู้ว่าเธอจะเอายังไงกับความสัมพันธ์เรา แต่เค้ารักเธนะ บอกไปเธอก็ไม่เชื่อ เค้ารู้ แต่ก็ยังอยากที่จะบอกอยู่ดี เธออาจจะมองว่าเค้าไม่คิดอะไรเลย ดูเหมือนคนไม่อยากมีกันต่อแล้ว แต่เปล่าเลย 
+            </p>
+            <p>
+                ก่อนนอนเค้าคิดทุกคืนว่าจะทำยังไงให้เราอยู่ด้วยกันได้นานๆ เค้าสามารถใช้ชีวิตคนเดียวได้ แต่ถ้ามีเธออยู่ด้วยกันมันดีมากกว่าไง ทุกอย่างในชีวิตเค้ามันดูง่ายขึ้น ถึงจะไม่มากแต่อย่างน้อยมันก็ง่ายขึ้น ขอโทษอีกครั้งที่ทำให้ต้องเสียใจอยู่บ่อยๆ ตลอดระยะเวลาที่ผ่านมาก็เกือบจะสี่ปีแล้ว ไม่มีวันไหนที่เธอหลับสนิทเลยใช่ไหม เค้ามันแย่เค้ารู้ เค้าก็พยายามปรับปรุงตัวเองนะ เค้าพยายามไม่ใช่ไม่พยายามเลย ถึงมันจะดูน้อยไปหรือยังไม่พอสำหรับเธอ
+            </p>
+        </div>
+
+        <div class="letter-footer">
+            <p>ด้วยความรู้สึกจากใจจริง</p>
+            <a href="index.html" class="back-button">
+                ↩ กลับหน้าแรก
+            </a>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -1,30 +1,302 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorry My Boo :(</title>
-</head>
-<body>
-    <img src="/image/ตาปิ้งแมว.png" alt="image">
-    <h1>หวัดดีเธอ</h1>
-    <p>วันนี้เค้าเป็นเด็กไม่ดีเลยใช่มั้ย คับเค้าพอจะรู้ตัว</p>
-    <p>เค้าอยากจะบอกเธอเค้าขอโทษ</p>
-    <img src="/image/แมวขอโทษ.gif" alt="gif">
-    <p>เค้ามีอะไรจะบอกนะ เลื่อนๆ</p>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <p>คือเค้ารักเธอแค่นี้</p>
-    <img src="/image/รักแรก.jpg" alt="gif">
-    <p>อะล้อเล่น</p>
-    <img src="/image/แมวไหว้.png" alt="gif">
-    <p>ไม่ๆๆ จริงๆคือเท่านี้</p>
-    <img src="/image/รักสอง.jpg" alt="gif">
-    <p>จริงๆคือเท่านี้ต่างหาก แฮร่</p>
-    <img src="/image/รักสาม.jpg" alt="gif">
-    <p>จริงๆความรักมันก็เท่านี้แหละเนอะ ต่อไปที่กำลังจะถึงนี้ คือสิ่งที่เค้าอยากจะบอกเธอทั้งหมด</p>
-    <p>ไม่รู้ว่าตอนเธออ่านเธอจะร้องไห้ ดีใจ เสียใจ ตลก หรืออะไรก็ตาม</p>
-    <p>แต่เค้าพิมพ์มันออกมาด้วยใจจริงๆ อยากให้เธอรู้</p>
-    <img src="/image/แมวร้อง.png" alt="gif">
-    <a href="love.html">กดตรงนี้เลยคับ</a>
+        body {
+            font-family: 'Anuphan', sans-serif;
+            background: linear-gradient(135deg, #fff5f5 0%, #fbcfe8 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #444;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* หัวใจลอยพื้นหลัง */
+        @keyframes float-heart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .floating-heart {
+            position: fixed;
+            font-size: 2.5rem;
+            pointer-events: none;
+            animation: float-heart linear infinite;
+            z-index: 1;
+            filter: drop-shadow(0 0 2px rgba(236, 72, 153, 0.5));
+        }
+
+        .floating-heart:nth-child(1) {
+            left: 5%;
+            animation-duration: 8s;
+            animation-delay: 0s;
+            color: #f472b6;
+        }
+
+        .floating-heart:nth-child(2) {
+            left: 15%;
+            animation-duration: 10s;
+            animation-delay: 2s;
+            color: #ec4899;
+        }
+
+        .floating-heart:nth-child(3) {
+            left: 25%;
+            animation-duration: 12s;
+            animation-delay: 4s;
+            color: #f472b6;
+        }
+
+        .floating-heart:nth-child(4) {
+            left: 35%;
+            animation-duration: 9s;
+            animation-delay: 1s;
+            color: #be185d;
+        }
+
+        .floating-heart:nth-child(5) {
+            left: 45%;
+            animation-duration: 11s;
+            animation-delay: 3s;
+            color: #f472b6;
+        }
+
+        .floating-heart:nth-child(6) {
+            left: 55%;
+            animation-duration: 8.5s;
+            animation-delay: 0.5s;
+            color: #ec4899;
+        }
+
+        .floating-heart:nth-child(7) {
+            left: 65%;
+            animation-duration: 10.5s;
+            animation-delay: 2.5s;
+            color: #f472b6;
+        }
+
+        .floating-heart:nth-child(8) {
+            left: 75%;
+            animation-duration: 9.5s;
+            animation-delay: 1.5s;
+            color: #be185d;
+        }
+
+        .floating-heart:nth-child(9) {
+            left: 85%;
+            animation-duration: 11.5s;
+            animation-delay: 3.5s;
+            color: #f472b6;
+        }
+
+        .floating-heart:nth-child(10) {
+            left: 95%;
+            animation-duration: 10s;
+            animation-delay: 2s;
+            color: #ec4899;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 40px rgba(236, 72, 153, 0.2);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .container img {
+            max-width: 100%;
+            height: auto;
+            margin: 25px 0;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .container img:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            color: #ec4899;
+            font-size: 2.5rem;
+            margin: 20px 0 25px 0;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(236, 72, 153, 0.1);
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 15px 0;
+            color: #555;
+            font-weight: 400;
+        }
+
+        .main-cat {
+            width:600px;
+            height: auto;
+            margin: 0 auto 25px;
+        }
+
+        .cat-gif {
+            width: 400px;
+            height: auto;
+            margin: 25px auto;
+        }
+
+        .cat-love {
+            width: 340px;
+            height: auto;
+            margin: 30px auto;
+        }
+
+        .cat-cry {
+            width: 600px;
+            height: auto;
+            margin: 25px auto;
+        }
+
+        .link-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(236, 72, 153, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .link-button:hover::before {
+            left: 100%;
+        }
+
+        .link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.5);
+        }
+
+        .link-button:active {
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .main-cat,
+            .cat-gif,
+            .cat-love,
+            .cat-cry {
+                width: 100%;
+                max-width: 450px;
+            }
+
+            .link-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            .floating-heart {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- หัวใจลอยหลายตัว -->
+    <span class="floating-heart">💕</span>
+    <span class="floating-heart">💕</span>
+    <span class="floating-heart">💕</span>
+    <span class="floating-heart">💕</span>
+    <span class="floating-heart">💕</span>
+    <span class="floating-heart">💕</span>
+    <span class="floating-heart">💕</span>
+    <span class="floating-heart">💕</span>
+    <span class="floating-heart">💕</span>
+    <span class="floating-heart">💕</span>
+
+    <div class="container">
+        <img src="/image/ตาปิ้งแมว.png" alt="image" class="main-cat">
+        <h1>หวัดดีเธอ</h1>
+        <p>วันนี้เค้าเป็นเด็กไม่ดีเลยใช่มั้ย คับเค้าพอจะรู้ตัว</p>
+        <p>เค้าอยากจะบอกเธอเค้าขอโทษ</p>
+        <img src="/image/แมวขอโทษ.gif" alt="gif" class="cat-gif">
+        <p>เค้ามีอะไรจะบอกนะ เลื่อนๆ</p>
+
+        <p>คือเค้ารักเธอแค่นี้</p>
+        <img src="/image/รักแรก.jpg" alt="gif" class="cat-love">
+        <p>อะล้อเล่น</p>
+        <img src="/image/แมวไหว้.png" alt="gif" class="cat-gif">
+        <p>ไม่ๆๆ จริงๆคือเท่านี้</p>
+        <img src="/image/รักสอง.jpg" alt="gif" class="cat-love">
+        <p>จริงๆคือเท่านี้ต่างหาก แฮร่</p>
+        <img src="/image/รักสาม.jpg" alt="gif" class="cat-love">
+        <p>จริงๆความรักมันก็เท่านี้แหละเนอะ ต่อไปที่กำลังจะถึงนี้ คือสิ่งที่เค้าอยากจะบอกเธอทั้งหมด</p>
+        <p>ไม่รู้ว่าตอนเธออ่านเธอจะร้องไห้ ดีใจ เสียใจ ตลก หรืออะไรก็ตาม</p>
+        <p>แต่เค้าพิมพ์มันออกมาด้วยใจจริงๆ อยากให้เธอรู้</p>
+        <img src="/image/แมวร้อง.png" alt="gif" class="cat-cry">
+        <a href="love.html" class="link-button">กดตรงนี้เลยคับ</a>
+    </div>
 </body>
+
 </html>
